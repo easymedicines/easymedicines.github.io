@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Truck, Lock, Award, MessageCircle } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 export const Footer: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Disclaimer */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img src="/assets/logo.svg" alt="EasyMeds" className="h-10 w-auto" />
+              <img src={getAssetUrl('/assets/logo.svg')} alt="EasyMeds" className="h-10 w-auto" />
             </Link>
             <p className="text-sm text-gray-600 leading-relaxed">
               EasyMeds is your trusted online healthcare destination for genuine, laboratory-tested prescription and wellness medications. Committed to discreet delivery, safety, and everyday affordability.

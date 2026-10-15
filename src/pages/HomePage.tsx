@@ -6,6 +6,7 @@ import { ProductCard } from '../components/ProductCard';
 import { BenefitTicker } from '../components/BenefitTicker';
 import { BentoCategories } from '../components/BentoCategories';
 import { ReviewsCarousel } from '../components/ReviewsCarousel';
+import { getAssetUrl } from '../lib/utils';
 
 interface HomePageProps {
   onOpenCallback: () => void;
@@ -76,7 +77,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenCallback }) => {
             <div className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl flex flex-col items-center text-center">
               <div className="w-48 sm:w-56 h-48 sm:h-56 bg-white rounded-2xl p-4 shadow-inner flex items-center justify-center mb-4">
                 <img
-                  src="/images/products/b336bbfab398_01.jpg"
+                  src={getAssetUrl('/images/products/b336bbfab398_01.jpg')}
                   alt="Featured Medicine"
                   className="max-h-full max-w-full object-contain"
                 />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
 import { Check, Plus } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 interface ProductCardProps {
   product: Product;
@@ -17,7 +18,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const { addToCart } = useCart();
   const [added, setAdded] = useState(false);
-  const [imgSrc, setImgSrc] = useState(product.primaryImage || '/images/products/placeholder.svg');
+  const [imgSrc, setImgSrc] = useState(getAssetUrl(product.primaryImage) || getAssetUrl('/images/products/placeholder.svg'));
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -42,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           src={imgSrc}
           alt={product.name}
           loading="lazy"
-          onError={() => setImgSrc('/images/products/placeholder.svg')}
+          onError={() => setImgSrc(getAssetUrl('/images/products/placeholder.svg'))}
           className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 interface CategoryItem {
   id: string;
@@ -124,7 +125,7 @@ export const BentoCategories: React.FC = () => {
               {/* Product preview artwork */}
               <div className="absolute inset-0 p-4 flex items-center justify-center bg-[#f8fbf9]">
                 <img
-                  src={cat.image}
+                  src={getAssetUrl(cat.image)}
                   alt={cat.name}
                   loading="lazy"
                   className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 opacity-90"
@@ -155,7 +156,7 @@ export const BentoCategories: React.FC = () => {
             >
               <div className="absolute inset-0 p-3 flex items-center justify-center bg-[#f8fbf9]">
                 <img
-                  src={cat.image}
+                  src={getAssetUrl(cat.image)}
                   alt={cat.name}
                   className="max-h-full max-w-full object-contain opacity-90"
                   onError={(e) => {

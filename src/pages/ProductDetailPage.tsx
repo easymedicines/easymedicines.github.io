@@ -4,6 +4,7 @@ import { useCatalog } from '../context/CatalogContext';
 import { useCart } from '../context/CartContext';
 import { ProductCard } from '../components/ProductCard';
 import { ShieldCheck, Truck, Clock, MessageSquare, Check, Plus, Minus, ArrowLeft, AlertCircle } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 interface ProductDetailPageProps {
   onOpenCallback?: (productName?: string) => void;
@@ -24,7 +25,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onOpenCall
 
   useEffect(() => {
     if (product) {
-      setActiveImage(product.primaryImage || '/images/products/placeholder.svg');
+      setActiveImage(getAssetUrl(product.primaryImage) || getAssetUrl('/images/products/placeholder.svg'));
       window.scrollTo(0, 0);
     }
   }, [product]);

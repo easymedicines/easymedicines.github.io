@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, User, ShoppingBag, Menu, X, Phone, Mail, MessageSquare } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { getAssetUrl } from '../lib/utils';
 
 interface HeaderProps {
   onOpenCallback?: () => void;
@@ -76,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCallback }) => {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="/assets/logo.svg"
+              src={getAssetUrl('/assets/logo.svg')}
               alt="EasyMeds Pharmacy"
               className="h-9 sm:h-11 md:h-12 w-auto"
             />
