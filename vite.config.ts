@@ -2,21 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-// Compute base path dynamically:
-// 1. Explicit BASE_PATH env variable (passed by GitHub Actions)
-// 2. If GITHUB_REPOSITORY exists and is not a *.github.io root repo, use /<repo-name>/
-// 3. Fallback to root '/'
+// Root GitHub Pages site (easymedicines.github.io) uses base "/".
+// Override with BASE_PATH only if you ever need a project subpath.
 const getBasePath = () => {
-  if (process.env.BASE_PATH) {
-    let bp = process.env.BASE_PATH;
-    if (!bp.endsWith('/')) bp += '/';
-    return bp;
-  }
-  const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
-  if (repo && !repo.endsWith('.github.io')) {
-    return `/${repo}/`;
-  }
-  return '/';
+  const bp = process.env.BASE_PATH || '/';
+  return bp.endsWith('/') ? bp : `${bp}/`;
 };
 
 // https://vitejs.dev/config/

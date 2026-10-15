@@ -40,7 +40,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={(import.meta.env.BASE_URL || '/').replace(/\/$/, '') || '/'}>
       <CatalogProvider>
         <CartProvider>
           <ScrollToTop />
