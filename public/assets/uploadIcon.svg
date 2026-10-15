@@ -1,0 +1,18 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <path d="M12 24.4336C5.3828 24.4336 0 19.0508 0 12.4336C0 5.81639 5.3828 0.433594 12 0.433594C18.6172 0.433594 24 5.81733 24 12.4336C24 19.0499 18.6172 24.4336 12 24.4336ZM12 2.29261C6.40898 2.29261 1.85902 6.84164 1.85902 12.4336C1.85902 18.0255 6.40898 22.5746 12 22.5746C17.591 22.5746 22.141 18.0255 22.141 12.4336C22.141 6.84164 17.592 2.29261 12 2.29261Z" fill="white"/>
+    <path d="M16.6475 13.4462H12.9295V17.1642C12.9295 17.6773 12.514 18.0938 11.9999 18.0938C11.4859 18.0938 11.0704 17.6773 11.0704 17.1642V13.4462H7.35238C6.83835 13.4462 6.42285 13.0298 6.42285 12.5167C6.42285 12.0036 6.83835 11.5871 7.35238 11.5871H11.0704V7.8691C11.0704 7.356 11.4859 6.93957 11.9999 6.93957C12.514 6.93957 12.9295 7.356 12.9295 7.8691V11.5871H16.6475C17.1615 11.5871 17.577 12.0036 17.577 12.5167C17.577 13.0298 17.1615 13.4462 16.6475 13.4462Z" fill="white"/>
+    <defs>
+    <rect width="24" height="24" fill="white" transform="matrix(1 0 0 -1 0 24.4336)"/>
+    </defs>
+</svg>
+    `
+export const RightCheckMarkIcon = `<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18" cy="18" r="17" stroke="#00B67A" stroke-width="2"/>
+<path d="M10 18.1765L15.3348 23.3529L26 13" stroke="#00B67A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+export const AffilateReferalIcon = `<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.2844 21.8225C7.19808 21.8225 2 22.7424 2 26.4284C2 30.1144 7.16642 31.0676 13.2844 31.0676C19.3723 31.0676 24.5688 30.1461 24.5688 26.4617C24.5688 22.7773 19.404 21.8225 13.2844 21.8225Z" stroke="#7237EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.2839 16.5653C17.2786 16.5653 20.5165 13.3274 20.5165 9.33264C20.5165 5.33789 17.2786 2.09998 13.2839 2.09998C9.2907 2.09998 6.05278 5.33789 6.05278 9.33264C6.03853 13.3131 9.2527 16.5511 13.2348 16.5653H13.2839Z" stroke="#7237EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.0514 11.472V17.8212" stroke="#7237EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31.2922 14.6464H24.8164" stroke="#7237EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
