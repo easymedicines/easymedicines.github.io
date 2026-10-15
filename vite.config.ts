@@ -2,8 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-// Project Pages live at https://easymedicines.github.io/easymeds/
-// Local dev stays at "/". Override anytime with BASE_PATH.
+// Org site (easymedicines.github.io) → base "/".
+// Project site (…/easymeds/) → base "/easymeds/".
+// Override anytime with BASE_PATH.
 const getBasePath = () => {
   if (process.env.BASE_PATH) {
     const bp = process.env.BASE_PATH;
@@ -11,6 +12,8 @@ const getBasePath = () => {
   }
   if (process.env.GITHUB_REPOSITORY) {
     const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
+    // User/org Pages repo is served at the domain root
+    if (repo.endsWith('.github.io')) return '/';
     return `/${repo}/`;
   }
   return '/';
