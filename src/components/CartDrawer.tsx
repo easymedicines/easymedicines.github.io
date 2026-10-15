@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { X, Trash2, Plus, Minus, ArrowRight, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -109,7 +110,7 @@ export const CartDrawer: React.FC = () => {
                       alt={item.productName}
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/images/products/placeholder.svg';
+                        (e.target as HTMLImageElement).src = getAssetUrl('/images/products/placeholder.svg');
                       }}
                     />
                   </Link>

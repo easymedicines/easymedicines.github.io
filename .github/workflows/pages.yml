@@ -33,7 +33,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          BASE_PATH: /
+          # Must match the project Pages URL: /<repo>/
+          BASE_PATH: /easymeds/
 
       - name: SPA fallback for client routes
         run: cp dist/index.html dist/404.html

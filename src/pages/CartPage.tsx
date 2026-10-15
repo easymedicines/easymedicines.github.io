@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Trash2, Plus, Minus, ArrowRight, ShieldCheck, ArrowLeft, ShoppingBag } from 'lucide-react';
+import { getAssetUrl } from '../lib/utils';
 
 export const CartPage: React.FC = () => {
   const { items, removeFromCart, updateQuantity, subtotal, shipping, total, itemCount } = useCart();
@@ -57,7 +58,7 @@ export const CartPage: React.FC = () => {
                       alt={item.productName}
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/images/products/placeholder.svg';
+                        (e.target as HTMLImageElement).src = getAssetUrl('/images/products/placeholder.svg');
                       }}
                     />
                   </Link>

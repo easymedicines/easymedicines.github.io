@@ -2,11 +2,18 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-// Root GitHub Pages site (easymedicines.github.io) uses base "/".
-// Override with BASE_PATH only if you ever need a project subpath.
+// Project Pages live at https://easymedicines.github.io/easymeds/
+// Local dev stays at "/". Override anytime with BASE_PATH.
 const getBasePath = () => {
-  const bp = process.env.BASE_PATH || '/';
-  return bp.endsWith('/') ? bp : `${bp}/`;
+  if (process.env.BASE_PATH) {
+    const bp = process.env.BASE_PATH;
+    return bp.endsWith('/') ? bp : `${bp}/`;
+  }
+  if (process.env.GITHUB_REPOSITORY) {
+    const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
+    return `/${repo}/`;
+  }
+  return '/';
 };
 
 // https://vitejs.dev/config/

@@ -105,34 +105,37 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ onOpenCall
                 src={activeImage}
                 alt={product.name}
                 className="max-h-full max-w-full object-contain"
-                onError={() => setActiveImage('/images/products/placeholder.svg')}
+                onError={() => setActiveImage(getAssetUrl('/images/products/placeholder.svg'))}
               />
             </div>
 
             {/* Thumbnail selector */}
             {product.images.length > 1 && (
               <div className="flex gap-3 overflow-x-auto pb-2">
-                {product.images.map((img, idx) => (
+                {product.images.map((img, idx) => {
+                  const imgUrl = getAssetUrl(img);
+                  return (
                   <button
                     key={idx}
                     type="button"
-                    onClick={() => setActiveImage(img)}
+                    onClick={() => setActiveImage(imgUrl)}
                     className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl p-2 bg-[#f8fbf9] border-2 flex items-center justify-center flex-shrink-0 transition-all ${
-                      activeImage === img
+                      activeImage === imgUrl
                         ? 'border-[#008000] shadow-sm'
                         : 'border-transparent hover:border-gray-300'
                     }`}
                   >
                     <img
-                      src={img}
+                      src={imgUrl}
                       alt={`Thumbnail ${idx + 1}`}
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/images/products/placeholder.svg';
+                        (e.target as HTMLImageElement).src = getAssetUrl('/images/products/placeholder.svg');
                       }}
                     />
                   </button>
-                ))}
+                  );
+                })}
               </div>
             )}
 

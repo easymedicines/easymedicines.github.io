@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem } from '../types';
+import { getAssetUrl } from '../lib/utils';
 
 interface CartContextType {
   items: CartItem[];
@@ -67,7 +68,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
           productId: product.id,
           productName: product.name,
           slug: product.slug,
-          image: product.primaryImage || '/images/products/placeholder.svg',
+          image: getAssetUrl(product.primaryImage || '/images/products/placeholder.svg'),
           category: product.category,
           price,
           variantId: selectedVariant?.id,
